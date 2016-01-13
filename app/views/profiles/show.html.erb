@@ -1,4 +1,29 @@
-<%= @profile.name %>
-<% @profile.educations.each do |edu| %>
-	<%= edu.school %>
-<% end %>
+<div class="container">
+	<div class="col-md-12">
+		<div class="pic">
+			<%= image_tag @profile.image, class: "profile-img img-circle" %>
+		</div>
+		<div class="info">
+			<div class="name">
+				<p><%= @profile.name %></p>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<p><%= @profile.phone %></p>
+					<p><%= @profile.email %></p>
+				</div>
+				<div class="col-md-4">
+					<p><%= @profile.about %></p>
+				</div>
+				<div class="col-md-4">
+					<p><%= @profile.street %></p>
+					<p><%= @profile.city %> <%= @profile.postcode %></p>
+					<p><%= @profile.state %></p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
