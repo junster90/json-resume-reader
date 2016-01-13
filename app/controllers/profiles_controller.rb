@@ -3,10 +3,11 @@ class ProfilesController < ApplicationController
 	end
 
 	def create
-		file = user_params[:file].tempfile
-		byebug
-		if is_json?(file)
-			flash[:notice] = "It works!"
+		file = user_params[:file]
+		if is_json?(file.tempfile)
+			json = JSON.parse(file.read)
+			@profile = Profile.new
+			
 			redirect_to "/profile"
 		else
 			flash[:alert] = "Please upload a valid JSON file."
@@ -16,6 +17,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def show
+		@profile = Profile.last
 	end
 
 	private
