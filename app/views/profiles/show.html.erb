@@ -12,6 +12,10 @@
 				<div class="col-md-4">
 					<p><%= @profile.phone %></p>
 					<p><%= @profile.email %></p>
+					<p>Speaks:</p>
+					<% @profile.languages.each do |l| %>
+					<p><%= l %></p>
+					<% end %>
 				</div>
 				<div class="col-md-4">
 					<p><%= @profile.about %></p>
@@ -21,6 +25,48 @@
 					<p><%= @profile.city %> <%= @profile.postcode %></p>
 					<p><%= @profile.state %></p>
 				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Education</h2>
+				</div>
+				
+				<% @profile.educations.each do |e| %>
+					<div class="col-md-12">
+						<p><%= e.qualification %></p>
+						<p><%= e.school %></p>
+						<p><%= e.year %></p>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Work Experience</h2>
+				</div>
+				
+				<% @profile.work_experiences.each do |e| %>
+					<div class="col-md-12">
+						<p><%= e.company %></p>
+						<p><%= e.position %></p>
+						<p><%= e.year %></p>
+					</div>
+				<% end %>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Github Projects</h2>
+				</div>
+				
+				<% @profile.projects.each do |e| %>
+					<div class="col-md-12">
+						<p><%= e.name %></p>
+						<p><%= e.description %></p>
+						<p><%= e.url %></p>
+					</div>
+				<% end %>
 			</div>
 
 		</div>

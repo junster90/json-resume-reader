@@ -47,12 +47,12 @@ class ProfilesController < ApplicationController
 
 				else
 					flash[:alert] = "Please upload a properly formatted resume JSON."
-					render "new"
+					redirect_to '/'
 				end
 
 			else
 				flash[:alert] = "Please upload a valid JSON file."
-				render "new"
+				redirect_to '/'
 			end
 		end
 	end
@@ -61,8 +61,8 @@ class ProfilesController < ApplicationController
 		if Profile.last
 			@profile = Profile.last
 		else
-			redirect_to '/'
 			flash[:alert] = "Please upload a resume JSON to view it's profile."
+			redirect_to '/'
 		end
 	end
 
