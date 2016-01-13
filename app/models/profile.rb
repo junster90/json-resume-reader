@@ -3,4 +3,5 @@ class Profile < ActiveRecord::Base
 	validates :email, uniqueness: true
 
 	has_many :work_experiences, :educations, :projects
+
 end
