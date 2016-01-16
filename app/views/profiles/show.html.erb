@@ -9,67 +9,79 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
-					<p><%= @profile.phone %></p>
-					<p><%= @profile.email %></p>
-					<p>Speaks:</p>
-					<% @profile.languages.each do |l| %>
-					<p><%= l %></p>
-					<% end %>
+				<div class="col-md-4 spacer">
+					<div>
+						<h4>Phone:</h4>
+						<p><%= @profile.phone %></p>
+						<h4>e-mail:</h4>
+						<p><%= @profile.email %></p>
+						<h4>I speak: </h4>
+						<% @profile.languages.each do |l| %>
+						<p><%= l %></p>
+						<% end %>
+					</div>
 				</div>
-				<div class="col-md-4">
-					<p><%= @profile.about %></p>
+				<div class="col-md-4 spacer">
+					<div>
+						<h4>About me:</h4>
+						<p><%= @profile.about %></p>
+					</div>
+					
 				</div>
-				<div class="col-md-4">
-					<p><%= @profile.street %></p>
-					<p><%= @profile.city %> <%= @profile.postcode %></p>
-					<p><%= @profile.state %></p>
+				<div class="col-md-4 spacer">
+					<div>
+						<h4>Address:</h4>
+						<p><%= @profile.street %></p>
+						<p><%= @profile.city %> <%= @profile.postcode %></p>
+						<p><%= @profile.state %></p>
+					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12">
-					<h2>Education</h2>
-				</div>
-				
-				<% @profile.educations.each do |e| %>
-					<div class="col-md-12">
-						<p><%= e.qualification %></p>
-						<p><%= e.school %></p>
-						<p><%= e.year %></p>
+				<div class="col-md-12 spacer">
+					<div>
+						<h2>Education</h2>
+						<% @profile.educations.each do |e| %>
+							<div>
+								<h4><%= e.qualification %></h4>
+								<p><%= e.school %></p>
+								<p><%= e.year %></p>
+							</div>
+						<% end %>
 					</div>
-				<% end %>
+				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12">
-					<h2>Work Experience</h2>
-				</div>
-				
-				<% @profile.work_experiences.each do |e| %>
-					<div class="col-md-12">
-						<p><%= e.company %></p>
-						<p><%= e.position %></p>
-						<p><%= e.year %></p>
+				<div class="col-md-12 spacer">
+					<div>
+						<h2>Work Experience</h2>
+						<% @profile.work_experiences.each do |w| %>
+							<div>
+								<h4><%= w.company %></h4>
+								<p><%= w.position %></p>
+								<p><%= w.year %></p>
+							</div>
+						<% end %>
 					</div>
-				<% end %>
+				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-12">
-					<h2>Github Projects</h2>
-				</div>
-				
-				<% @profile.projects.each do |e| %>
-					<div class="col-md-12">
-						<p><%= e.name %></p>
-						<p><%= e.description %></p>
-						<p><%= e.url %></p>
+				<div class="col-md-12 spacer">
+					<div>
+						<h2>Github Projects</h2>
+						<% @profile.projects.each do |p| %>
+							<div>
+								<h4><%= p.name %></h4>
+								<p><%= p.description %></p>
+								<a href="<%= p.url %>"><%= p.url %></a>
+							</div>
+						<% end %>
 					</div>
-				<% end %>
+				</div>
 			</div>
-
 		</div>
 	</div>
-
 </div>

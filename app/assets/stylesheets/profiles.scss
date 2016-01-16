@@ -2,12 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font1: 'Montserrat', sans-serif;
+$font2: 'Raleway', sans-serif;
+
 body {
 	background: #136a8a;
 	background: -webkit-linear-gradient(to left, #136a8a , #267871);
 	background: linear-gradient(to left, #136a8a , #267871);
-        
-	font-family: 'Montserrat', sans-serif;
 }
 
 .alerts {
@@ -20,9 +21,8 @@ body {
 	text-align: center;
 	color: white;
 	font-size: 100px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: $font1;
 }
-
 
 .wrapper {
   $height: 60px;
@@ -77,11 +77,19 @@ body {
 	min-height: 800px;
 	border: 1px solid gray;
 	border-radius: 10px;
+  font-family: $font2;
 
 	.name {
 		margin-top: 100px;
 		text-align: center;
-		font-family: 'Montserrat', sans-serif;
+		font-family: $font1;
 		font-size: 72px;
 	}
+}
+
+.spacer {
+  div {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
