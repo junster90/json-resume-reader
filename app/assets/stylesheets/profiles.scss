@@ -11,6 +11,19 @@ body {
 	background: linear-gradient(to left, #136a8a , #267871);
 }
 
+.home {
+  a {
+    color: #ddd;
+    font-family: $font1;
+    font-size: 24px;
+    
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
 .alerts {
 	margin-top: 50px;
 }
